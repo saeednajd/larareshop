@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.slider-mr{
+    margin-right: 0.7rem;
+}
