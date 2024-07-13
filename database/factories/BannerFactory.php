@@ -17,8 +17,8 @@ class BannerFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(3),
-            'imageurl' => fake()->imageUrl(),
+            'title'=>fake()->title(),
+            'imageurl'=>fake()->imageUrl(),
             'link'=>'#',
             'location'=>fake()->randomElement(['topmenu','middle'])
         ];

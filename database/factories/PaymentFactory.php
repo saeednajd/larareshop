@@ -22,7 +22,6 @@ class PaymentFactory extends Factory
             'user_id' => User::factory(),
             'order_id' => Order::factory(),
             'status' => fake()->randomElement(['success', 'error']),
-
         ];
     }
 }

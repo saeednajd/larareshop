@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product_Category>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProductCategory>
  */
 class ProductCategoryFactory extends Factory
 {
@@ -17,7 +17,10 @@ class ProductCategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title'=>fake()->title(),
+            'tags'=>json_encode([
+                'tag','tag2','tag3','tag32','tag4',
+            ])
         ];
     }
 }

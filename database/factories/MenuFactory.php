@@ -17,9 +17,9 @@ class MenuFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->title(),
-            'link' => '#',
-            'location' => fake()->randomElement(['topmenu', 'footer']),
+            'name'=>fake()->title(),
+            'link'=>'#',
+            'location'=>fake()->randomElement(['topmenu','footer'])
         ];
     }
 }
