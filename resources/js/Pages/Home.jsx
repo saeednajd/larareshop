@@ -7,6 +7,7 @@ import Topminibanner from './Componnents/Images/Topminibanner';
 import Topslider from './Componnents/Sliders/Topslider';
 import SpecialProductsSlider from './Componnents/Products/SpecialProductsSlider';
 import SmallBanners from './Componnents/Images/SmallBanners';
+import Footer from './Componnents/Footer';
 export default function Welcome({ auth }) {
 
     return (
@@ -98,6 +99,10 @@ export default function Welcome({ auth }) {
                 <section>
                     <SmallBanners></SmallBanners>
                 </section>
+                <Footer></Footer>
+                <footer className=''>
+
+                </footer>
             </div>
 
 

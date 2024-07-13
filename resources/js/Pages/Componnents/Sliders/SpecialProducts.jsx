@@ -72,8 +72,8 @@ const TopSlider = () => {
             <Slider {...settings}>
                 {products.map((product, index) => (
                     <div className=''> 
-                        <div key={index} className="flex flex-col items-center justify-center p-4 bg-white  rounded-bl-2xl
-                    rounded-tr-2xl slider-mr" >
+                        <div key={index} className="flex flex-col items-center justify-center p-4 bg-white  rounded-bl-xl
+                    rounded-tr-xl rounded-tl-xl  slider-mr" >
                             <img
                                 src={product.image}
                                 alt={product.description}

@@ -16,12 +16,12 @@ const products = [
         price: '$10'
     },
     {
-        image: bannert,
+        image: banner,
         description: 'Product 2',
         price: '$20'
     },
     {
-        image: bannerr,
+        image: banner,
         description: 'Product 3',
         price: '$30'
     }
@@ -36,7 +36,6 @@ const TopSlider = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        fade: true,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />
 
@@ -46,14 +45,20 @@ const TopSlider = () => {
         <div className="w-full max-w-3xl mx-auto  ">
             <Slider {...settings}>
                 {products.map((product, index) => (
-                    <div key={index} className="flex flex-col items-center  bg-white  rounded-lg">
-                        <img
-                            src={product.image}
-                            alt={product.description}
-                            className=" object-cover  rounded-lg"
-                        />
+                    <div className=''>
 
+                        <div key={index} className="flex flex-col items-center  bg-white  rounded-lg">
+
+                            <img
+                                src={product.image}
+                                alt={product.description}
+                                className=" object-cover  rounded-lg"
+                            />
+                            <p className="text-lg font-semibold opacity-0">{product.description}</p>
+
+                        </div>
                     </div>
+
                 ))}
             </Slider>
 
@@ -66,7 +71,7 @@ function SampleNextArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, display: "none"}}
+            style={{ ...style, display: "none" }}
             onClick={onClick}
         />
     );
