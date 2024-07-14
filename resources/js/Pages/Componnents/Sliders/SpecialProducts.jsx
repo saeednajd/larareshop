@@ -54,7 +54,7 @@ const products = [
     // Add more products as needed
 ];
 
-const TopSlider = () => {
+const TopSlider = (props) => {
     const settings = {
         infinite: true,
         speed: 500,
@@ -68,7 +68,7 @@ const TopSlider = () => {
     };
     return (
         <div className="w-full max-w-[76vw] mx-auto my-8">
-
+            {console.log(props.allproducts)}
             <Slider {...settings}>
                 {products.map((product, index) => (
                     <div className=''> 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Amazingp from '../../../../images/Amazings.svg'
 import SpecialProducts from '../Sliders/SpecialProducts';
-function SpecialProductsSlider() {
+function SpecialProductsSlider(props) {
     return (
         <div className='bg-red-500 w-[90%] mx-auto my-6 rounded-xl h-80'>
             <div className=' flex flex-row-reverse h-full'>
@@ -13,7 +13,7 @@ function SpecialProductsSlider() {
                     </span>
                 </div>
                 <div className=''>
-                    <SpecialProducts></SpecialProducts>
+                    <SpecialProducts allproducts={props.allproducts}></SpecialProducts>
                 </div>
             </div>
         </div>
