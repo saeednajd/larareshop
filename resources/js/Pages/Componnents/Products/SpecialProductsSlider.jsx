@@ -13,7 +13,7 @@ function SpecialProductsSlider(props) {
                     </span>
                 </div>
                 <div className=''>
-                    <SpecialProducts allproducts={props.allproducts}></SpecialProducts>
+                    <SpecialProducts specialproducts={props.specialproducts}></SpecialProducts>
                 </div>
             </div>
         </div>

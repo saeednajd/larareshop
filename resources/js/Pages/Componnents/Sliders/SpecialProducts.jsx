@@ -68,22 +68,48 @@ const TopSlider = (props) => {
     };
     return (
         <div className="w-full max-w-[76vw] mx-auto my-8">
-            {console.log(props.allproducts)}
             <Slider {...settings}>
-                {products.map((product, index) => (
-                    <div className=''> 
-                        <div key={index} className="flex flex-col items-center justify-center p-4 bg-white  rounded-bl-xl
-                    rounded-tr-xl rounded-tl-xl  slider-mr" >
-                            <img
-                                src={product.image}
-                                alt={product.description}
-                                className="w-32 h-32 object-cover mb-4"
-                            />
-                            <p className="text-lg font-semibold">{product.description}</p>
-                            <p className="text-lg font-bold">{product.price}</p>
-                        </div>
-                    </div>
+                {props.specialproducts.map((product, index) => (
+                    <a href="">
+                        <div className=''>
+                            <div key={index} className="flex flex-col items-center justify-center p-4 bg-white  rounded-bl-lg
+                    rounded-tr-lg rounded-tl-lg  slider-mr h-[39vh] max-h-[40vh] overflow-hidden" >
+                                <img
+                                    src={product.prImage}
+                                    alt={product.prDescription}
+                                    className="w-32 h-32 object-cover mb-4 rounded-bl-lg
+                    rounded-tr-lg rounded-tl-lg"
+                                />
+                                <p className="text- font-semibold overflow-hidden">{product.prTitle}</p>
 
+
+                                {product.offPrice ? (
+                                    <div className='flex flex-col items-center '>
+                                        <p className="text-sm  line-through text-gray-400">{product.prPrice}</p>
+
+                                        <div className='flex flex-row-reverse justify-center items-center'>
+
+                                            <p className="text-lg font-bold text-red-500">{product.offPrice} </p>
+                                            <span className='text-red-500 text-sm'>هزار تومان</span>
+
+                                        </div>
+                                    </div>
+
+                                ) :
+                                    <div className='flex flex-row-reverse justify-center items-center'>
+
+                                        <p className="text-lg font-bold text-red-500">{product.prPrice} </p>
+                                        <span className='text-red-500 text-sm'>هزار تومان</span>
+
+                                    </div>
+
+                                }
+
+
+                            </div>
+
+                        </div>
+                    </a>
                 ))}
             </Slider>
 

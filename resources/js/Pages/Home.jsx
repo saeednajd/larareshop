@@ -7,7 +7,7 @@ import Footer from './Componnents/Footer';
 import Topsection from './Componnents/Topsection';
 import Topsliderandbanners from './Componnents/Topsliderandbanners';
 
-export default function Welcome({ auth, menu, banners, products }) {
+export default function Welcome({ auth, menu, banners, products ,specialproducts}) {
 
     return (
         <>
@@ -22,12 +22,12 @@ export default function Welcome({ auth, menu, banners, products }) {
                 </section>
                 {/* پیشنهاد ویژه */}
                 <section>
-                    <SpecialProductsSlider allproducts={products} ></SpecialProductsSlider>
+                    <SpecialProductsSlider specialproducts={specialproducts} ></SpecialProductsSlider>
                 </section>
 
                 {/* بنر پایانی */}
                 <section>
-                    <SmallBanners></SmallBanners>
+                    <SmallBanners banners= {banners}></SmallBanners>
                 </section>
                 <Footer></Footer>
                 <footer className=''>
