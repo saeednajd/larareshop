@@ -20,6 +20,9 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "@inertiajs/inertia": "^0.11.1",
+        "@inertiajs/inertia-react": "^0.8.1",
+        "@inertiajs/progress": "^0.2.7",
         "react-slick": "^0.30.2",
         "slick-carousel": "^1.8.1"
     }

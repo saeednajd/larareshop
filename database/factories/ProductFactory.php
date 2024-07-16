@@ -22,13 +22,8 @@ class ProductFactory extends Factory
             'prPrice'=>fake()->randomFloat(2, 1, 1000),
             'prImage'=>fake()->imageUrl(640, 480, 'animals', true),
             'offPrice'=>null,
-            'gallery'=>json_encode([
-                '1'=>fake()->imageUrl(640, 480, 'animals', true),
-                '2'=>fake()->imageUrl(640, 480, 'animals', true),
-            ]),
-            'tags'=>json_encode([
-                'tag','tag2','tag3','tag32','tag4',
-            ])
+            'gallery'=>'https://dkstatics-public.digikala.com/digikala-products/30b7b2495097fe53daf33aa2c0d5a3151c26c618_1712581746.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80|https://dkstatics-public.digikala.com/digikala-products/dac1b804e5f5df30672a6fd0fdcc9d87d064c8bd_1652810830.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80',
+            'tags'=>'tag1,game,beauty'
         ];
     }
 }

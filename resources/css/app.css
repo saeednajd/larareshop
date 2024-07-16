@@ -8,3 +8,13 @@
 .slider-mr {
     margin-right: 0.7rem;
 }
+
+.slick-dots li{
+    width: 10vw !important;    
+}
+.slick-dots {
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}

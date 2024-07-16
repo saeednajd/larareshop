@@ -23,4 +23,12 @@ class BannerFactory extends Factory
             'location'=>fake()->randomElement(['topmenu','middle'])
         ];
     }
+
+    public function topmenulocation(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'location' => 'topmenu',
+        ]);
+    }
+    
 }

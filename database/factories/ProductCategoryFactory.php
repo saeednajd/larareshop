@@ -23,4 +23,10 @@ class ProductCategoryFactory extends Factory
             ])
         ];
     }
+    public function special(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'title' => 'special',
+        ]);
+    }
 }

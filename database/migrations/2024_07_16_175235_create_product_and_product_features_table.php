@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Product;
+use App\Models\ProductFeature;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,16 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('product_and_product_features', function (Blueprint $table) {
             $table->id();
-            $table->string('prTitle');
-            $table->string('prDescription');
-            $table->string('prImage');
-            $table->string('prPrice');
-            $table->string('offPrice')->nullable();
-            $table->text('gallery')->nullable();
-            $table->text('tags')->nullable();
+            $table->foreignIdFor(Product::class);
+            $table->foreignIdFor(ProductFeature::class);
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('product_and_product_features');
     }
 };
