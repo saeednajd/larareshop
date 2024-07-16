@@ -32,9 +32,9 @@ export default function Login({ status, canResetPassword }) {
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="email" value="Email" />
+            <form onSubmit={submit} >
+                <div className='py-4'>
+                    <InputLabel htmlFor="email" value="ایمیل" className='text-right' />
 
                     <TextInput
                         id="email"
@@ -50,8 +50,8 @@ export default function Login({ status, canResetPassword }) {
                     <InputError message={errors.email} className="mt-2" />
                 </div>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                <div className="mt-4 py-4">
+                    <InputLabel htmlFor="password" value="رمز عبور" className='text-right' />
 
                     <TextInput
                         id="password"
@@ -67,30 +67,38 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="block mt-4">
-                    <label className="flex items-center">
+                    <label className="flex items-center justify-end">
                         <Checkbox
+                            className='focus:outline-none'
                             name="remember"
                             checked={data.remember}
                             onChange={(e) => setData('remember', e.target.checked)}
                         />
-                        <span className="ms-2 text-sm text-gray-600">Remember me</span>
+                        <span className="ms-2 text-sm text-gray-600 ">مرا به خاطر بسپار</span>
                     </label>
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className="flex  items-center justify-between  mt-4">
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className=" text-sm text-red-800 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                            Forgot your password?
+                            فراموشی رمز عبور
                         </Link>
                     )}
+                    <Link
+                        href={route('register')}
+                        className=" text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                        حساب کاربری ندارید؟
+                    </Link>
 
                     <PrimaryButton className="ms-4" disabled={processing}>
-                        Log in
+                        ورود
                     </PrimaryButton>
                 </div>
+
             </form>
         </GuestLayout>
     );

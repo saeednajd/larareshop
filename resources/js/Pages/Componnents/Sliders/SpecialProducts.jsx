@@ -67,10 +67,11 @@ const TopSlider = (props) => {
 
     };
     return (
-        <div className="w-full max-w-[76vw] mx-auto my-8">
+        <div className="w-full max-w-[76vw] mx-auto my-10">
             <Slider {...settings}>
                 {props.specialproducts.map((product, index) => (
-                    <a href="">
+
+                    <a href={route('product.show', { id: product.id })}>
                         <div className=''>
                             <div key={index} className="flex flex-col items-center justify-center p-4 bg-white  rounded-bl-lg
                     rounded-tr-lg rounded-tl-lg  slider-mr h-[39vh] max-h-[40vh] overflow-hidden" >

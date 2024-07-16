@@ -3,7 +3,7 @@ import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, useForm } from '@inertiajs/react';
-
+import { Link } from '@inertiajs/react';
 export default function ForgotPassword({ status }) {
     const { data, setData, post, processing, errors } = useForm({
         email: '',
@@ -19,9 +19,9 @@ export default function ForgotPassword({ status }) {
         <GuestLayout>
             <Head title="Forgot Password" />
 
-            <div className="mb-4 text-sm text-gray-600">
-                Forgot your password? No problem. Just let us know your email address and we will email you a password
-                reset link that will allow you to choose a new one.
+            <div className="mb-4 text-sm text-gray-600 text-right">
+                رمز عبور خودتون رو فراموش کردید؟ مشکلی نیست! فقط کافیه ایمیلی که باهاش ثبت
+                نام کردید رو وارد کنید تا ما ایمیلی حاوی لینک ریست پسورد براتون ارسال کنیم
             </div>
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
@@ -39,12 +39,21 @@ export default function ForgotPassword({ status }) {
 
                 <InputError message={errors.email} className="mt-2" />
 
-                <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ms-4" disabled={processing}>
-                        Email Password Reset Link
+                <div className="flex flex-row-reverse items-center justify-between mt-4">
+                    <PrimaryButton className="ms-4 bg-red-500 hover:bg-red-900" disabled={processing}>
+                        ریست کردن پسورد
                     </PrimaryButton>
+                    <Link
+                    href={route('Home')}
+                    className="hover:text-blue-500 transition-colors duration-300"
+                >
+                    بازگشت به خانه
+                </Link>
                 </div>
+                
+                
             </form>
+
         </GuestLayout>
     );
 }

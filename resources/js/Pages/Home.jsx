@@ -7,14 +7,19 @@ import Footer from './Componnents/Footer';
 import Topsection from './Componnents/Topsection';
 import Topsliderandbanners from './Componnents/Topsliderandbanners';
 
-export default function Welcome({ auth, menu, banners, products ,specialproducts}) {
+export default function Welcome({ auth, site_setting, menu, banners, products, specialproducts }) {
 
     return (
         <>
             <Head title="Welcome" />
+
+
+            {/* <pre>
+                {JSON.stringify(specialproducts, undefined, 2)}
+            </pre> */}
             <div className=''>
                 <section>
-                    <Topsection auth={auth} menu={menu}></Topsection>
+                    <Topsection auth={auth} menu={menu} site_setting={site_setting}></Topsection>
                 </section>
 
                 <section>
@@ -27,7 +32,7 @@ export default function Welcome({ auth, menu, banners, products ,specialproducts
 
                 {/* بنر پایانی */}
                 <section>
-                    <SmallBanners banners= {banners}></SmallBanners>
+                    <SmallBanners banners={banners}></SmallBanners>
                 </section>
                 <Footer></Footer>
                 <footer className=''>
