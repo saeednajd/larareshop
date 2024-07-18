@@ -6,14 +6,18 @@ import logo from '../../../images/ladana logo.png';
 
 
 function Topsection(props) {
- 
+
     return (
         <div id='top-menu' className='border border-b-2 shadow-sm'>
 
             <section className='flex flex-col'>
                 <section className='text-black flex flex-row-reverse justify-between items-center  h-24 w-[90%] mx-auto'>
                     <div className=' text-white  text-center flex flex-row-reverse  justify-between h-[70%] mr-8 '>
-                        <img src={logo} alt="" className='' />
+                        <div className='flex justify-end text-right'>
+                            <Link href={route('Home')}>
+                                <img src={logo} alt="" className='w-[50%] ml-auto' />
+                            </Link>
+                        </div>
                         <div className=' flex items-center'>
                             <input className='w-[30vw] rounded-lg text-right bg-gray-100 border-none' type="text" placeholder=' .... جستجو' />
 
@@ -27,7 +31,7 @@ function Topsection(props) {
                             >
                                 پنل کاربری
                             </Link>
-                            
+
                         ) : (
                             <>
                                 <div className='flex flex-row-reverse  px-8 items-center gap-2'>
@@ -47,7 +51,7 @@ function Topsection(props) {
                                             ثبت نام
                                         </Link>
                                     </div>
-                                    
+
 
                                 </div>
 

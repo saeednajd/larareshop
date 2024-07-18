@@ -3,6 +3,8 @@ import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from '@inertiajs/react';
+
 import banner from '../../../../images/banner.webp';
 
 const products = [
@@ -71,7 +73,7 @@ const TopSlider = (props) => {
             <Slider {...settings}>
                 {props.specialproducts.map((product, index) => (
 
-                    <a href={route('product.show', { id: product.id })}>
+                    <Link href={route('product.show', { id: product.id })}>
                         <div className=''>
                             <div key={index} className="flex flex-col items-center justify-center p-4 bg-white  rounded-bl-lg
                     rounded-tr-lg rounded-tl-lg  slider-mr h-[39vh] max-h-[40vh] overflow-hidden" >
@@ -110,7 +112,7 @@ const TopSlider = (props) => {
                             </div>
 
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </Slider>
 
