@@ -7,12 +7,12 @@ import "slick-carousel/slick/slick-theme.css";
 
 const SinglePageProduct = (props) => {
     // {console.log(props.product.id)}
-    let myproduct = props.product.gallery;
+    let myproduct = props.product[0].gallery;
     const gallery = myproduct.split('|');
-    gallery.push(props.product.prImage);
+    gallery.push(props.product[0].prImage);
 
-    {console.log(gallery[2])}
-   
+    { console.log(gallery[2]) }
+
 
     const settings = {
         customPaging: function (i) {

@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from '@inertiajs/react';
 
 function Topmenulink({ children, href }) {
     return (
         <li className='mr-6  hover:text-red-500 transition-all duration-300 '>
-                <a href={href} >
+                <Link href={href} >
                     {children}
-                </a>
+                </Link>
 
         </li >
     )
