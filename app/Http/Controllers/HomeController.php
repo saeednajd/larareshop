@@ -7,6 +7,7 @@ use App\Models\Menu;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\ProductType;
 use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -16,7 +17,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $specialcategory = ProductCategory::where('title', 'special')->get();
+        $specialcategory = ProductType::where('prType', 'special')->get();
 
         $query = Product::query();
         $test = $query->paginate(10);
@@ -26,7 +27,6 @@ class HomeController extends Controller
         foreach ($specialcategory as $category) {
             $productsArray = array_merge($productsArray, $category->product->toArray());
         }
-
         $menu = Menu::all();
         $banners = Banner::all();
         $products = Product::all();

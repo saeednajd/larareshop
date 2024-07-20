@@ -27,6 +27,7 @@ export default function Welcome({ auth, site_setting, menu, banners, products, s
                 </section>
                 {/* پیشنهاد ویژه */}
                 <section>
+                    {console.log(specialproducts)}
                     <SpecialProductsSlider specialproducts={specialproducts} ></SpecialProductsSlider>
                 </section>
 

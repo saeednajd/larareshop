@@ -107,3 +107,45 @@ p {
     background: rgb(210, 209, 209);
     /* رنگ نوار اسکرول در حالت هاور */
 }
+
+
+
+/* /////////////////
+ */
+
+ .cart-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* پس‌زمینه تار */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* اطمینان از اینکه مدال در بالای سایر عناصر قرار گیرد */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* عرض مدال */
+}
+
+.close-button {
+    margin-top: 10px;
+    background-color: red; /* رنگ دکمه بستن */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

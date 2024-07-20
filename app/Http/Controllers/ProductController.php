@@ -9,27 +9,12 @@ use App\Models\Menu;
 use App\Models\Product;
 use App\Models\ProductCategory;
 
-use function PHPUnit\Framework\isEmpty;
-use function PHPUnit\Framework\isNull;
 
 class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $sortby = $request->session()->get('sortby');
-       
-        $menu = Menu::all();
-        $categories = ProductCategory::all();
-
-        $query = Product::query();
-        $products = $query->paginate(12);
-
-
-        return Inertia::render('Product/Shop', [
-            'menu' => $menu,
-            'categories' => $categories,
-            'products' => $products,
-        ]);
+       //
     }
     public function show($id)
     {

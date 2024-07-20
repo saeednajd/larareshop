@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('prTitle');
             //price
-            $table->string('prBuyPrice');
-            $table->string('prOneToFivePrice');
-            $table->string('prFiveToTenPrice');
-            $table->string('prTenToUnlmitePrice');
-            $table->string('offPrice');
+            $table->decimal('prBuyPrice');
+            $table->decimal('prOneToFivePrice');
+            $table->decimal('prFiveToTenPrice');
+            $table->decimal('prTenToUnlmitePrice');
+            $table->decimal('offPrice');
             
             //description
             $table->text('shortDescription')->nullable();

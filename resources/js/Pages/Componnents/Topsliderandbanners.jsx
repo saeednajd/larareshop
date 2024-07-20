@@ -14,7 +14,7 @@ function Topsliderandbanners(props) {
                     if (counter < 2 && banner.location == 'topbanner') {
                         counter++;
                         return (
-                            <Topminibanner imgsrc={banner.imageurl  }></Topminibanner>
+                            <Topminibanner imgsrc={banner.imageurl}></Topminibanner>
                         );
 
                     }

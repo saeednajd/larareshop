@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShopController;
 use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -13,15 +14,10 @@ Route::get('/', [HomeController::class, 'index'])->name('Home');
 //product 
 
 
-Route::get('/shop', function () {
-    return redirect()->route('product');
-})->name('shop');
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::get('/shop/{orderby}', [ShopController::class, 'show'])->name('shop.orderby');
 
-Route::get('/shop/{sortby}', function ($sortby) {
-    return redirect()->route('product')->with('sortby', $sortby);
-})->name('shop.sortby');
 
-Route::get('/product', [ProductController::class, 'index'])->name('product');
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
