@@ -83,7 +83,9 @@ const TopSlider = (props) => {
                                     className="w-32 h-32 object-cover mb-4 rounded-bl-lg
                     rounded-tr-lg rounded-tl-lg"
                                 />
-                                <p className="text- font-semibold overflow-hidden">{product.prTitle}</p>
+                                <p className="text-right font-semibold   overflow-hidden text-ellipsis line-clamp-2">
+                                    
+                                    {product.prTitle}</p>
 
 
                                 {product.offPrice ? (
