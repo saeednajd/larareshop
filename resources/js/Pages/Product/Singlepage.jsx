@@ -102,7 +102,7 @@ export default function Singlepage({ auth, menu, producwithttype }) {
                                         </div>
                                     </div>
                                     <div className='flex flex-row-reverse justify-between mt-8 '>
-                                        <CountButtons />
+                                        <CountButtons producwithttype={producwithttype} />
 
                                     </div>
                                 </div>

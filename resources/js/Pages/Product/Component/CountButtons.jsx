@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function CountButtons(props) {
     const [value, setValue] = useState(0);
-
+    const prodcutDetail = props.producwithttype[0];
     const handleIncrement = () => {
         setValue(value + 1);
     };
@@ -14,15 +14,20 @@ function CountButtons(props) {
     };
 
     const handleAddToCart = () => {
-        const item = {
-            id: props.id,
-            title: props.title,
-            quantity: value
-        };
-        
+        if (!value == 0) {
+            const item = {
+                id: prodcutDetail.id,
+                title: prodcutDetail.prTitle,
+                image: prodcutDetail.prImage,
+                price: prodcutDetail.prOneToFivePrice,
+                quantity: value
+            };
+            localStorage.setItem(`cartItem-${prodcutDetail.id}`, JSON.stringify(item));
+
+        }
+
+
         // Save item to localStorage
-        localStorage.setItem(`cartItem-${props.id}`, JSON.stringify(item));
-        alert(`${props.title} has been added to the cart!`);
     };
 
     return (
@@ -73,8 +78,8 @@ function CountButtons(props) {
                     </svg>
                 </button>
             </div>
-            <button 
-                className='bg-black text-white p-2 rounded-lg' 
+            <button
+                className='bg-black text-white p-2 rounded-lg'
                 onClick={handleAddToCart}
             >
                 افزودن به سبد خرید
