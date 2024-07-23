@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -11,14 +12,16 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('Home');
 
-//product 
-
-
+//shop 
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 Route::get('/shop/{orderby}', [ShopController::class, 'show'])->name('shop.orderby');
-
-
-
+//checkout
+Route::get('/checkout', function () {
+    return Inertia::render('Checkout');
+})->name('checkout');
+//cart
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+//product
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
 

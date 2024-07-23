@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 function CountButtons(props) {
+    const [showModal, setShowModal] = useState(false);
+
     const [value, setValue] = useState(0);
     const prodcutDetail = props.producwithttype[0];
     const handleIncrement = () => {
@@ -26,7 +28,11 @@ function CountButtons(props) {
 
         }
 
-
+        setShowModal(true);
+        // محو کردن modal بعد از ۲ ثانیه
+        setTimeout(() => {
+            setShowModal(false);
+        }, 2000);
         // Save item to localStorage
     };
 
@@ -84,6 +90,22 @@ function CountButtons(props) {
             >
                 افزودن به سبد خرید
             </button>
+            {showModal && (
+                <div className="fixed inset-0 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-lg shadow-lg p-4 flex items-center">
+                        <svg
+                            className="w-6 h-6 text-green-500 mr-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>محصول با موفقیت اضافه شد</span>
+                    </div>
+                </div>
+            )}
         </>
     );
 }

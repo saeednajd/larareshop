@@ -76,7 +76,7 @@ function ShoppingCart() {
                                     <span>0</span>
                                     <span>محصول</span>
                                 </div>
-                                <Link href='#' className='text-red-600 text-sm hover:text-red-300 transition-colors duration-300'>مشاهده سبد خرید </Link>
+                                <Link href='/cart' className='text-red-600 text-sm hover:text-red-300 transition-colors duration-300'>مشاهده سبد خرید </Link>
                             </div>
                             <img className='w-[30%] my-8 mx-auto' src={emptycart} alt="" />
                             <h3 className='text-center'>هیچ محصولی در سبد خرید نیست
@@ -89,7 +89,7 @@ function ShoppingCart() {
                                     <span>{itemsInCart}</span>
                                     <span>محصول</span>
                                 </div>
-                                <Link href='#' className='text-red-600 text-sm hover:text-red-300 transition-colors duration-300'>مشاهده سبد خرید </Link>
+                                <Link href='/cart' className='text-red-600 text-sm hover:text-red-300 transition-colors duration-300'>مشاهده سبد خرید </Link>
                             </div>
 
 

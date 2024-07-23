@@ -24,12 +24,7 @@ class ProductController extends Controller
 
         $categoryTitle = 'special';
 
-        // پیدا کردن محصول با دسته‌بندی مشخص
-        // $product = Product::where('id', $productId)
-        //     ->whereHas('productCategory', function ($query) use ($categoryTitle) {
-        //         $query->where('title', $categoryTitle);
-        //     })
-        //     ->first();
+  
 
         $producttype = Product::with('producttype')
             ->whereHas('producttype')
