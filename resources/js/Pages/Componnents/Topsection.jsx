@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from '@inertiajs/react';
 import Topmenu from './Menus/Topmenu';
 import logo from '../../../images/ladana logo.png';
+import Cart from './Cart';
 
 
 function Topsection(props) {
@@ -59,7 +60,9 @@ function Topsection(props) {
                             </>
                         )}
                         <span className='text-gray-300 mx-2'>|</span>
-                        <span className='mx-2'>cart</span>
+                        <span className='mx-2'>
+                            <Cart></Cart>
+                        </span>
                     </nav>
                 </section>
                 <section className=''>
@@ -67,10 +70,6 @@ function Topsection(props) {
                 </section>
             </section>
             {/* اسلایدر */}
-
-            <section>
-
-            </section>
         </div>
     )
 }

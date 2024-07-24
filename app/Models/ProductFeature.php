@@ -11,6 +11,7 @@ class ProductFeature extends Model
     use HasFactory;
     public function product(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, 'product_and_product_features', 'product_id', 'product_feature_id');
+        return $this->belongsToMany(Product::class, 'product_and_product_features', 'product_feature_id', 'product_id');
+
     }
 }

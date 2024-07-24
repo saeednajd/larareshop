@@ -10,23 +10,23 @@ import CategoryHeader from './Component/CategoryHeader';
 import freeship from '../../../images/free-shipping.svg';
 import shild from '../../../images/shield.png';
 import verified from '../../../images/verified.png';
+
+
 import CountButtons from './Component/CountButtons';
-export default function Singlepage({ auth, menu, productwithcategory }) {
+export default function Singlepage({ auth, menu, producwithttype }) {
 
     var flag = true;
-    if (!productwithcategory[0].product_category) {
+    if (!producwithttype[0].producttype) {
         flag = false;
 
     }
-    let prcategories = productwithcategory[0].product_category;
-
-    let product = productwithcategory[0];
+    ;
+    let prtypes = producwithttype[0].producttype;
+    let product = producwithttype[0];
     return (
         <>
-            {/* <pre>
-                {JSON.stringify(auth, undefined, 2)}
-            </pre> */}
-            {/* {JSON.stringify(productwithcategory[0].prTitle, undefined, 2)} */}
+            <Head title='صفحه محصول' />
+
 
             <div className=''>
                 <section>
@@ -40,12 +40,12 @@ export default function Singlepage({ auth, menu, productwithcategory }) {
                             {/* اسلایدر تصاویر سمت راست */}
                             <div className='w-[30%] flex flex-col items-center'>
                                 {flag ? (
-                                    <CategoryHeader prcategories={prcategories} />
+                                    <CategoryHeader prtypes={prtypes} />
 
                                 ) : (
                                     <></>
                                 )}
-                                <SinglePageProduct product={productwithcategory} />
+                                <SinglePageProduct product={producwithttype} />
                             </div>
 
                             <div className='w-[35%]  flex flex-col'>
@@ -88,21 +88,21 @@ export default function Singlepage({ auth, menu, productwithcategory }) {
                                         <div>
                                             {product.offPrice ? (
                                                 <div className='text-right mt-4 mr-4'>
-                                                    <h4 className='text-black/40 text-xl font-bold line-through'>{product.prPrice} تومان
+                                                    <h4 className='text-black/40 text-xl font-bold line-through'>{product.prOneToFivePrice} تومان
                                                     </h4>
                                                     <h4 className='text-red-500 text-xl font-bold'>{product.offPrice} تومان
                                                     </h4>
                                                 </div>
                                             ) : (
                                                 <div className='text-right mt-4 mr-4'>
-                                                    <h4 className='text-red-500 text-xl font-bold '>{product.prPrice} تومان
+                                                    <h4 className='text-red-500 text-xl font-bold '>{product.prOneToFivePrice} تومان
                                                     </h4>
                                                 </div>
                                             )}
                                         </div>
                                     </div>
                                     <div className='flex flex-row-reverse justify-between mt-8 '>
-                                        <CountButtons />
+                                        <CountButtons producwithttype={producwithttype} />
 
                                     </div>
                                 </div>
